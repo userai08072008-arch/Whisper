@@ -1,6 +1,6 @@
 import mongoose, { Schema, type Document } from "mongoose";
 
-export interface IUser extends Document {
+export interface IChat extends Document {
     participants: mongoose.Types.ObjectId[]; //participants will be stored as an array in the db
     lastMessage?: mongoose.Types.ObjectId; //lastMessage will be stored as an ObjectId in the db
     lastMessageAt?: Date;
