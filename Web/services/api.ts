@@ -1,0 +1,18 @@
+const API_URL = (import.meta as any).env.VITE_API_URL || 'http://localhost:3000';
+
+export const api = {
+    get: (path: string) => fetch(`${API_URL}${path}`).then(r => r.json()),
+    post: (path: string, data: unknown) => fetch(`${API_URL}${path}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    }).then(r => r.json()),
+    put: (path: string, data: unknown) => fetch(`${API_URL}${path}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    }).then(r => r.json()),
+    delete: (path: string) => fetch(`${API_URL}${path}`, {
+        method: 'DELETE'
+    }).then(r => r.json()),
+};
