@@ -53,3 +53,7 @@ Thumbs.db
 # Local development
 temp/
 tmp/
+
+# Clerk React project
+clerk-react/
+Web/clerk-react/
